@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteBase /
+
+RewriteRule ^()$ index.php [NC,L]
+
+Rewritecond %{REQUEST_URI} !(^/?.*\..*$) [NC]
+
+RewriteRule (.*)$ $1.php [NC]
+
+ErrorDocument 400 /go/status.php?code=400
+ErrorDocument 401 /go/status.php?code=401
+ErrorDocument 403 /go/status.php?code=403
+ErrorDocument 404 /go/status.php?code=404
+ErrorDocument 429 /go/status.php?code=429
+ErrorDocument 500 /go/status.php?code=500
