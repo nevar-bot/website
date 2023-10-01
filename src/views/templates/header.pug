@@ -1,0 +1,26 @@
+header.header
+    .navbar-area
+        .container
+            .row.align-items-center
+                .col-lg-12
+                    nav.navbar.navbar-expand-lg
+                        a.navbar-brand(href='/')
+                            div #{name.toUpperCase()}
+                        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                            span.toggler-icon
+                            span.toggler-icon
+                            span.toggler-icon
+                        #navbarSupportedContent.collapse.navbar-collapse.sub-menu-bar
+                            ul#nav.navbar-nav.ms-auto
+                                li.nav-item
+                                    a.page-scroll.active(href='#home') Home
+                                li.nav-item
+                                    a.page-scroll(href='#features') Features
+                                li.nav-item
+                                    a.page-scroll(href='#about') Über
+                                li.nav-item
+                                    a.page-scroll(href='#why') Warum #{name}
+                                li.nav-item
+                                    a.page-scroll(href='#testimonials') Team
+                                li.nav-item
+                                    a(href='https://cp.nevar.eu' target='_blank' rel='noopener') Dashboard

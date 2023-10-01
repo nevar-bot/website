@@ -9,3 +9,6 @@ build/
 # IDE's
 .idea/
 .workspace/
+
+# Website
+config.toml

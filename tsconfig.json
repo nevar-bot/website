@@ -11,6 +11,10 @@
     "paths": {
       "@root/*": ["./*"],
       "@src/*": ["./src/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@views/*": ["./src/views/*"],
+      "@public/*": ["./public/*"]
     },
 
     "resolveJsonModule": true,
