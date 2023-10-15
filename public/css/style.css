@@ -486,6 +486,9 @@ h6,
 
 
 /*** Footer ***/
+.footer {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 15px;
+}
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 5px;
