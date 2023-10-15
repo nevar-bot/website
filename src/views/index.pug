@@ -276,45 +276,18 @@ html(lang='de')
         .container-xxl.py-5
             .container
                 .text-center.mx-auto.wow(style='max-width: 600px;')
-                    p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Our Team
-                    h1.display-5.mb-5.text-light Exclusive Team
+                    p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Unser Team
+                    h1.display-5.mb-5.text-light Das #{name}-Team
                 .row.g-4
-                    .col-lg-4.col-md-6.wow
-                        .team-item
-                            img.img-fluid.rounded(src='img/team-1.jpg', alt='')
-                            .team-text
-                                h4.mb-0.text-light Kate Winslet
-                                .team-social.d-flex
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-facebook-f
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-twitter
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-instagram
-                    .col-lg-4.col-md-6.wow
-                        .team-item
-                            img.img-fluid.rounded(src='img/team-2.jpg', alt='')
-                            .team-text
-                                h4.mb-0.text-light Jac Jacson
-                                .team-social.d-flex
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-facebook-f
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-twitter
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-instagram
-                    .col-lg-4.col-md-6.wow
-                        .team-item
-                            img.img-fluid.rounded(src='img/team-3.jpg', alt='')
-                            .team-text
-                                h4.mb-0.text-light Doris Jordan
-                                .team-social.d-flex
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-facebook-f
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-twitter
-                                    a.btn.btn-square.rounded-circle.mx-1(href='')
-                                        i.fab.fa-instagram
+                    each staff in staffs
+                        .col-lg-3.col-md-6.wow
+                            .team-item
+                                img.img-fluid.rounded(src=staff.avatar + "?size=2048", alt='Avatar von ' + staff.displayName)
+                                .team-text
+                                    h4.mb-0.text-light #{staff.displayName}
+                                    .team-social.d-flex
+                                        a.btn.btn-square.rounded-circle.mx-1(href='https://discord.com/users/' + staff.id, target='_blank', rel='noopener')
+                                            i.fa-brands.fa-discord
 
         // Footer
         include ./templates/footer
