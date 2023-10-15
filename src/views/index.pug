@@ -1,500 +1,320 @@
-include ./templates/head
-body
-    include ./templates/header
-    section#home.hero-section
-        .container
-            .row.align-items-center.position-relative
-                .col-lg-6
-                    .hero-content
-                        h1.wow.fadeInUp(data-wow-delay='.4s' style='font-family: All Round Gothic Medium;')
-                            | Effizienz weitergedacht
-                        p.wow.fadeInUp(data-wow-delay='.6s')
-                            | Mit #{name} bieten wir einen modernen Discord-Bot zur Moderierung und Verwaltung deines Discord-Servers
-                        a.main-btn.border-btn.btn-hover.wow.fadeInUp(href='/invite', data-wow-delay='.6s') Einladen
-                        a.scroll-bottom(href='#features')
-                            i.lni.lni-arrow-down
-                .col-lg-6
-                    .hero-img.wow.fadeInUp(data-wow-delay='.5s')
-                        img(src='img/logo/logo_transparent.webp', alt='' style='width:833px;height:614px;')
-    // ======== hero-section end ========
-    // ======== feature-section start ========
-    section#features.feature-section.pt-120
-        .container
-            .row.justify-content-center
-                .col-lg-4.col-md-8.col-sm-10
-                    .single-feature
-                        .icon
-                            i.lni.lni-bootstrap
-                        .content
-                            h3 Bootstrap 5
-                            p
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor invidunt ut labore
-                .col-lg-4.col-md-8.col-sm-10
-                    .single-feature
-                        .icon
-                            i.lni.lni-layout
-                        .content
-                            h3 Clean Design
-                            p
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor invidunt ut labore
-                .col-lg-4.col-md-8.col-sm-10
-                    .single-feature
-                        .icon
-                            i.lni.lni-coffee-cup
-                        .content
-                            h3 Easy to Use
-                            p
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor invidunt ut labore
-    // ======== feature-section end ========
-    // ======== about-section start ========
-    section#about.about-section.pt-150
-        .container
-            .row.align-items-center
-                .col-xl-6.col-lg-6
-                    .about-img
-                        img.w-100(src='img/about/about-1.png', alt='')
-                        img.shape.shape-1(src='img/about/about-left-shape.svg', alt='')
-                        img.shape.shape-2(src='img/about/left-dots.svg', alt='')
-                .col-xl-6.col-lg-6
-                    .about-content
-                        .section-title.mb-30
-                            h2.mb-25.wow.fadeInUp(data-wow-delay='.2s')
-                                | Perfect Solution Thriving Online Business
-                            p.wow.fadeInUp(data-wow-delay='.4s')
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | dinonumy eirmod tempor invidunt ut labore et dolore magna
-                                | aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                | justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                                | sea takimata sanctus est Lorem.Lorem ipsum dolor sit amet.
-                        a.main-btn.btn-hover.border-btn.wow.fadeInUp(href='javascript:void(0)', data-wow-delay='.6s') Discover More
-    // ======== about-section end ========
-    // ======== about2-section start ========
-    section#about.about-section.pt-150
-        .container
-            .row.align-items-center
-                .col-xl-6.col-lg-6
-                    .about-content
-                        .section-title.mb-30
-                            h2.mb-25.wow.fadeInUp(data-wow-delay='.2s')
-                                | Easy to Use with Tons of Awesome Features
-                            p.wow.fadeInUp(data-wow-delay='.4s')
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                | aliquyam erat, sed diam voluptua.
-                        ul
-                            li Quick Access
-                            li Easily to Manage
-                            li 24/7 Support
-                        a.main-btn.btn-hover.border-btn.wow.fadeInUp(href='javascript:void(0)', data-wow-delay='.6s') Learn More
-                .col-xl-6.col-lg-6.order-first.order-lg-last
-                    .about-img-2
-                        img.w-100(src='img/about/about-2.png', alt='')
-                        img.shape.shape-1(src='img/about/about-right-shape.svg', alt='')
-                        img.shape.shape-2(src='img/about/right-dots.svg', alt='')
-    // ======== about2-section end ========
-    // ======== feature-section start ========
-    section#why.feature-extended-section.pt-100
-        .feature-extended-wrapper
+doctype html
+html(lang='de')
+    include ./templates/head
+    body.bg-dark
+        // Spinner Start
+        #spinner.show.bg-dark.position-fixed.translate-middle.w-100.vh-100.top-50.start-50.d-flex.align-items-center.justify-content-center
+            .spinner-border.text-primary(role='status', style='width: 3rem; height: 3rem;')
+
+        // Top and Navbar
+        .container-fluid.fixed-top.px-0.wow.fadeIn(data-wow-delay='0.1s')
+            include ./templates/topbar
+            include ./templates/navbar
+
+        // Hero
+        .container-fluid.p-0.mb-5.wow.fadeIn(data-wow-delay='0.1s')
+            #header.carousel-inner
+                .carousel-item.active
+                    img.w-100.h-100.desktop-only(src='img/wave.svg', alt='Hero background image')
+                    .carousel-caption
+                        .container
+                            .row.justify-content-start
+                                .col-lg-8
+                                    h1.display-1.mb-4.animated.slideInDown.text-light
+                                        | Effizienz weitergedacht
+                                    a.btn.btn-primary.py-3.px-5.animated.slideInDown(href='javascript:void(0);') Einladen
+        // About
+        .container-xxl.py-5
             .container
-                .row.justify-content-center
-                    .col-xxl-5.col-xl-6.col-lg-8.col-md-9
-                        .section-title.text-center.mb-60
-                            h2.mb-25.wow.fadeInUp(data-wow-delay='.2s')
-                                | Why Choose SaaSpal
-                            p.wow.fadeInUp(data-wow-delay='.4s')
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor invidunt ut labore et dolore
-                .row
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-display
-                            .content
-                                h3 SaaS Focused
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-leaf
-                            .content
-                                h3 Awesome Design
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-grid-alt
-                            .content
-                                h3 Ready to Use
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-javascript
-                            .content
-                                h3 Vanilla JS
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-layers
-                            .content
-                                h3 Essential Sections
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-                    .col-lg-4.col-md-6
-                        .single-feature-extended
-                            .icon
-                                i.lni.lni-rocket
-                            .content
-                                h3 Highly Optimized
-                                p
-                                    | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    | diam nonumy eirmod tempor invidunt ut labore
-    // ======== feature-section end ========
-    // ======== pricing-section end ========
-    section#pricing.pricing-section.pt-120.pb-120
-        .container
-            .row.justify-content-center
-                .col-xxl-5.col-xl-6.col-lg-8.col-md-9
-                    .section-title.text-center.mb-35
-                        h2.mb-25.wow.fadeInUp(data-wow-delay='.2s')
-                            | Choose a Plan
-                        p.wow.fadeInUp(data-wow-delay='.4s')
-                            | Lorem ipsum dolor sit amet consetetur sadipscing elitr sswed
-                            | diam nonumy eirmod tempor nvidunt.
-            .pricing-nav-wrapper.mb-60
-                ul#pills-tab.nav.nav-pills(role='tablist')
-                    li(role='presentation')
-                        a#pills-month-tab.active(data-bs-toggle='pill', href='#pills-month', role='tab', aria-controls='pills-month', aria-selected='true') Monthly
-                    li(role='presentation')
-                        a#pills-year-tab(data-bs-toggle='pill', href='#pills-year', role='tab', aria-controls='pills-year', aria-selected='false') Yearly
-            #pills-tabContent.tab-content
-                #pills-month.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='pills-month-tab')
-                    .row.justify-content-center
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $36
-                                    h3.package-name Basic Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Single User
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-close
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-close
-                                            |  Free Future Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover.border-btn(href='javascript:void(0)') Get Start
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $56
-                                    h3.package-name Standard Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  20+ Users
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Free Future
-                                            Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover(href='javascript:void(0)') Get Start
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $89
-                                    h3.package-name Premium Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Users
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Free Future
-                                            Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover.border-btn(href='javascript:void(0)') Get Start
-                #pills-year.tab-pane.fade(role='tabpanel', aria-labelledby='pills-year-tab')
-                    .row.justify-content-center
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $136
-                                    h3.package-name Basic Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Single User
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-close
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-close
-                                            |  Free Future Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover.border-btn(href='javascript:void(0)') Get Start
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $156
-                                    h3.package-name Standard Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  20+ Users
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-close
-                                            |  Free Future Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover(href='javascript:void(0)') Get Start
-                        .col-lg-4.col-md-8.col-sm-10
-                            .single-pricing
-                                .pricing-header
-                                    h1.price $189
-                                    h3.package-name Premium Account
-                                .content
-                                    ul
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Acces
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited Users
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Unlimited
-                                            Storage
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  24/7 Support
-                                        li
-                                            i.lni.lni-checkmark.active
-                                            |  Free Future
-                                            Updates
-                                .pricing-btn
-                                    a.main-btn.btn-hover.border-btn(href='javascript:void(0)') Get Start
-    // ======== pricing-section end ========
-    // ======== testimonial-section start ========
-    section#testimonials.testimonial-section
-        .container
-            .section-title.text-center
-                h2.mb-30 What our customers says
-            .testimonial-active-wrapper
-                .shapes
-                    img.shape.shape-1(src='img/testimonial/testimonial-shape.svg', alt='')
-                    img.shape.shape-2(src='img/testimonial/testimonial-dots.svg', alt='')
-                .testimonial-active
-                    // single testimonial
-                    .single-testimonial
-                        .row
-                            .col-xl-5.col-lg-5
-                                .testimonial-img
-                                    img(src='img/testimonial/testimonial-1.png', alt='')
-                                    .quote
-                                        i.lni.lni-quotation
-                            .col-xl-6.offset-xl-1.col-lg-6.offset-lg-1
-                                .content-wrapper
-                                    .content
-                                        p
-                                            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                            | sed dinonumy eirmod tempor invidunt ut labore et dolore
-                                            | magna aliquyam erat, sed diam voluptua. At vero eos et
-                                            | accusam et justo duo dolores et ea rebum. Stet clita
-                                            | kasd gubergren, no sea takimata sanctus est Lorem.
-                                    .info
-                                        h4 Jonathon Smith
-                                        p Developer and Youtuber
-                    // single testimonial
-                    .single-testimonial
-                        .row
-                            .col-xl-5
-                                .testimonial-img
-                                    img(src='img/testimonial/testimonial-2.png', alt='')
-                                    .quote
-                                        i.lni.lni-quotation
-                            .col-xl-6.offset-xl-1
-                                .content-wrapper
-                                    .content
-                                        p
-                                            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                            | sed dinonumy eirmod tempor invidunt ut labore et dolore
-                                            | magna aliquyam erat, sed diam voluptua. At vero eos et
-                                            | accusam et justo duo dolores et ea rebum. Stet clita
-                                            | kasd gubergren, no sea takimata sanctus est Lorem.
-                                    .info
-                                        h4 Gray Simon
-                                        p UIX Designer and Developer
-                    // single testimonial
-                    .single-testimonial
-                        .row
-                            .col-xl-5
-                                .testimonial-img
-                                    img(src='img/testimonial/testimonial-3.png', alt='')
-                                    .quote
-                                        i.lni.lni-quotation
-                            .col-xl-6.offset-xl-1
-                                .content-wrapper
-                                    .content
-                                        p
-                                            | Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                            | sed dinonumy eirmod tempor invidunt ut labore et dolore
-                                            | magna aliquyam erat, sed diam voluptua. At vero eos et
-                                            | accusam et justo duo dolores et ea rebum. Stet clita
-                                            | kasd gubergren, no sea takimata sanctus est Lorem.
-                                    .info
-                                        h4 Michel Smith
-                                        p Traveler and Vloger
-    // ======== testimonial-section end ========
-    // ======== subscribe-section start ========
-    section#contact.subscribe-section.pt-120
-        .container
-            .subscribe-wrapper.img-bg
-                .row.align-items-center
-                    .col-xl-6.col-lg-7
-                        .section-title.mb-15
-                            h2.text-white.mb-25 Subscribe Our Newsletter
-                            p.text-white.pr-5
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | diam nonumy eirmod tempor
-                    .col-xl-6.col-lg-5
-                        form.subscribe-form(action='#')
-                            input#subs-email(type='email', name='subs-email', placeholder='Your Email')
-                            button.main-btn.btn-hover(type='submit')
-                                | Subscribe
-    // ======== subscribe-section end ========
-    // ======== footer start ========
-    footer.footer
-        .container
-            .widget-wrapper
-                .row
-                    .col-xl-4.col-lg-4.col-md-6
-                        .footer-widget
-                            .logo.mb-30
-                                a(href='index.html')
-                                    img(src='img/logo/logo.svg', alt='')
-                            p.desc.mb-30.text-white
-                                | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                | dinonumy eirmod tempor invidunt.
-                            ul.socials
-                                li
-                                    a(href='jvascript:void(0)')
-                                        i.lni.lni-facebook-filled
-                                li
-                                    a(href='jvascript:void(0)')
-                                        i.lni.lni-twitter-filled
-                                li
-                                    a(href='jvascript:void(0)')
-                                        i.lni.lni-instagram-filled
-                                li
-                                    a(href='jvascript:void(0)')
-                                        i.lni.lni-linkedin-original
-                    .col-xl-2.col-lg-2.col-md-6
-                        .footer-widget
-                            h3 About Us
-                            ul.links
-                                li
-                                    a(href='javascript:void(0)') Home
-                                li
-                                    a(href='javascript:void(0)') Feature
-                                li
-                                    a(href='javascript:void(0)') About
-                                li
-                                    a(href='javascript:void(0)') Testimonials
-                    .col-xl-3.col-lg-3.col-md-6
-                        .footer-widget
-                            h3 Features
-                            ul.links
-                                li
-                                    a(href='javascript:void(0)') How it works
-                                li
-                                    a(href='javascript:void(0)') Privacy policy
-                                li
-                                    a(href='javascript:void(0)') Terms of service
-                                li
-                                    a(href='javascript:void(0)') Refund policy
-                    .col-xl-3.col-lg-3.col-md-6
-                        .footer-widget
-                            h3 Other Products
-                            ul.links
-                                li
-                                    a(href='jvascript:void(0)') Accounting Software
-                                li
-                                    a(href='jvascript:void(0)') Billing Software
-                                li
-                                    a(href='jvascript:void(0)') Booking System
-                                li
-                                    a(href='jvascript:void(0)') Tracking System
-    // ======== footer end ========
-    // ======== scroll-top ========
-    a.scroll-top.btn-hover(href='#')
-        i.lni.lni-chevron-up
-    // ======== JS here ========
-    script(src='js/bootstrap.bundle.min.js')
-    script(src='js/tiny-slider.js')
-    script(src='js/wow.min.js')
-    script(src='js/main.js')
+                .row.g-4.align-items-end.mb-4
+                    .col-lg-6.wow
+                        img.img-fluid.rounded(src='img/about.svg')
+                    .col-lg-6.wow
+                        p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Über uns
+                        h1.display-5.mb-4.text-light We Help Our Clients To Grow Their Business
+                        p.mb-4.text-light
+                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                            | eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                        .border.rounded.p-4
+                            nav
+                                #nav-tab.nav.nav-tabs.mb-3(role='tablist')
+                                    button#nav-story-tab.nav-link.fw-semi-bold.active(data-bs-toggle='tab', data-bs-target='#nav-story', type='button', role='tab', aria-controls='nav-story', aria-selected='true') Story
+                                    button#nav-mission-tab.nav-link.fw-semi-bold(data-bs-toggle='tab', data-bs-target='#nav-mission', type='button', role='tab', aria-controls='nav-mission', aria-selected='false') Mission
+                                    button#nav-vision-tab.nav-link.fw-semi-bold(data-bs-toggle='tab', data-bs-target='#nav-vision', type='button', role='tab', aria-controls='nav-vision', aria-selected='false') Vision
+                            #nav-tabContent.tab-content
+                                #nav-story.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='nav-story-tab')
+                                    p.text-light
+                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                                        | amet diam et eos labore.
+                                    p.mb-0.text-light
+                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
+                                        | Clita erat ipsum et lorem et sit
+                                #nav-mission.tab-pane.fade(role='tabpanel', aria-labelledby='nav-mission-tab')
+                                    p.text-light
+                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                                        | amet diam et eos labore.
+                                    p.mb-0.text-light
+                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
+                                        | Clita erat ipsum et lorem et sit
+                                #nav-vision.tab-pane.fade(role='tabpanel', aria-labelledby='nav-vision-tab')
+                                    p.text-light
+                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                                        | amet diam et eos labore.
+                                    p.mb-0.text-light
+                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
+                                        | Clita erat ipsum et lorem et sit
+                .border.rounded.p-4.wow
+                    .row.g-4
+                        .col-lg-4.wow
+                            .h-100
+                                .d-flex
+                                    .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
+                                        i.fa.fa-times.text-white
+                                    .ps-3.text-light
+                                        h4.text-light No Hidden Cost
+                                        span Clita erat ipsum lorem sit sed stet duo justo
+                                    .border-end.d-none.d-lg-block
+                                .border-bottom.mt-4.d-block.d-lg-none
+                        .col-lg-4.wow
+                            .h-100
+                                .d-flex
+                                    .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
+                                        i.fa.fa-users.text-white
+                                    .ps-3.text-light
+                                        h4.text-light Dedicated Team
+                                        span Clita erat ipsum lorem sit sed stet duo justo
+                                    .border-end.d-none.d-lg-block
+                                .border-bottom.mt-4.d-block.d-lg-none
+                        .col-lg-4.wow
+                            .h-100
+                                .d-flex
+                                    .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
+                                        i.fa.fa-phone.text-white
+                                    .ps-3.text-light
+                                        h4.text-light 24/7 Available
+                                        span Clita erat ipsum lorem sit sed stet duo justo
+
+        // Facts
+        .container-fluid.facts.my-5.py-5
+            .container.py-5
+                .row.g-5
+                    .col-sm-6.col-lg-4.text-center.wow
+                        i.fa-brands.fa-discord.text-white.mb-3
+                        h1.display-4.text-white(data-toggle='counter-up') #{guildCount}
+                        span.fs-5.text-white Server
+                        hr.bg-white.w-25.mx-auto.mb-0
+                    .col-sm-6.col-lg-4.text-center.wow
+                        i.fa-solid.fa-users.text-white.mb-3
+                        h1.display-4.text-white(data-toggle='counter-up') #{userCount.toLocaleString("de")}
+                        span.fs-5.text-white Nutzer
+                        hr.bg-white.w-25.mx-auto.mb-0
+                    .col-sm-6.col-lg-4.text-center.wow
+                        i.fa-solid.fa-square-poll-vertical.text-white.mb-3
+                        h1.display-4.text-white(data-toggle='counter-up') #{voteCount}
+                        span.fs-5.text-white Votes im Oktober
+                        hr.bg-white.w-25.mx-auto.mb-0
+
+        // Features
+        .container-xxl.feature.py-5
+            .container
+                .row.g-5.align-items-center
+                    .col-lg-6.wow
+                        p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Why Choosing Us!
+                        h1.display-5.mb-4.text-light Few Reasons Why People Choosing Us!
+                        p.mb-4.text-light
+                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                            | eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                        a.btn.btn-primary.py-3.px-5(href='') Explore More
+                    .col-lg-6
+                        .row.g-4.align-items-center
+                            .col-md-6
+                                .row.g-4
+                                    .col-12.wow
+                                        .feature-box.border.rounded.p-4
+                                            i.fa.fa-check.fa-3x.text-primary.mb-3
+                                            h4.mb-3.text-light Fast Executions
+                                            p.mb-3.text-light
+                                                | Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
+                                                | justo erat amet
+                                            a.fw-semi-bold(href='')
+                                                | Read More
+                                                i.fa.fa-arrow-right.ms-1
+                                    .col-12.wow
+                                        .feature-box.border.rounded.p-4
+                                            i.fa.fa-check.fa-3x.text-primary.mb-3
+                                            h4.mb-3.text-light Guide &amp; Support
+                                            p.mb-3.text-light
+                                                | Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
+                                                | justo erat amet
+                                            a.fw-semi-bold(href='')
+                                                | Read More
+                                                i.fa.fa-arrow-right.ms-1
+                            .col-md-6.wow
+                                .feature-box.border.rounded.p-4
+                                    i.fa.fa-check.fa-3x.text-primary.mb-3
+                                    h4.mb-3.text-light Financial Secure
+                                    p.mb-3.text-light
+                                        | Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
+                                        | erat amet
+                                    a.fw-semi-bold(href='')
+                                        | Read More
+                                        i.fa.fa-arrow-right.ms-1
+
+        // Service
+        .container-xxl.service.py-5
+            .container
+                .text-center.mx-auto.wow(style='max-width: 600px;')
+                    p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Our Services
+                    h1.display-5.mb-5.text-light Awesome Financial Services For Business
+                .row.g-4.wow
+                    .col-lg-4
+                        .nav.nav-pills.d-flex.justify-content-between.w-100.h-100.me-4
+                            button.nav-link.w-100.d-flex.align-items-center.text-start.border.p-4.mb-4.active(data-bs-toggle='pill', data-bs-target='#tab-pane-1', type='button')
+                                h5.m-0.text-light
+                                    i.fa.fa-bars.text-primary.me-3
+                                    | Financial Planning
+                            button.nav-link.w-100.d-flex.align-items-center.text-start.border.p-4.mb-4(data-bs-toggle='pill', data-bs-target='#tab-pane-2', type='button')
+                                h5.m-0.text-light
+                                    i.fa.fa-bars.text-primary.me-3
+                                    | Cash Investment
+                            button.nav-link.w-100.d-flex.align-items-center.text-start.border.p-4.mb-4(data-bs-toggle='pill', data-bs-target='#tab-pane-3', type='button')
+                                h5.m-0.text-light
+                                    i.fa.fa-bars.text-primary.me-3
+                                    | Financial Consultancy
+                            button.nav-link.w-100.d-flex.align-items-center.text-start.border.p-4.mb-0(data-bs-toggle='pill', data-bs-target='#tab-pane-4', type='button')
+                                h5.m-0.text-light
+                                    i.fa.fa-bars.text-primary.me-3
+                                    | Business Loans
+                    .col-lg-8
+                        .tab-content.w-100
+                            #tab-pane-1.tab-pane.fade.show.active
+                                .row.g-4
+                                    .col-md-6(style='min-height: 350px;')
+                                        .position-relative.h-100
+                                            img.position-absolute.rounded.w-100.h-100(src='img/service-1.jpg', style='object-fit: cover;', alt='')
+                                    .col-md-6
+                                        h3.mb-4.text-light 25 Years Of Experience In Financial Support
+                                        p.mb-4.text-light
+                                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+                                            | diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                                            | clita duo justo erat amet.
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Secured Loans
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Credit Facilities
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Cash Advanced
+                                        a.btn.btn-primary.py-3.px-5.mt-3(href='') Read More
+                            #tab-pane-2.tab-pane.fade
+                                .row.g-4
+                                    .col-md-6(style='min-height: 350px;')
+                                        .position-relative.h-100
+                                            img.position-absolute.rounded.w-100.h-100(src='img/service-2.jpg', style='object-fit: cover;', alt='')
+                                    .col-md-6
+                                        h3.mb-4.text-light 25 Years Of Experience In Financial Support
+                                        p.mb-4.text-light
+                                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+                                            | diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                                            | clita duo justo erat amet.
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Secured Loans
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Credit Facilities
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Cash Advanced
+                                        a.btn.btn-primary.py-3.px-5.mt-3(href='') Read More
+                            #tab-pane-3.tab-pane.fade
+                                .row.g-4
+                                    .col-md-6(style='min-height: 350px;')
+                                        .position-relative.h-100
+                                            img.position-absolute.rounded.w-100.h-100(src='img/service-3.jpg', style='object-fit: cover;', alt='')
+                                    .col-md-6
+                                        h3.mb-4.text-light 25 Years Of Experience In Financial Support
+                                        p.mb-4.text-light
+                                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+                                            | diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                                            | clita duo justo erat amet.
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Secured Loans
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Credit Facilities
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Cash Advanced
+                                        a.btn.btn-primary.py-3.px-5.mt-3(href='') Read More
+                            #tab-pane-4.tab-pane.fade
+                                .row.g-4
+                                    .col-md-6(style='min-height: 350px;')
+                                        .position-relative.h-100
+                                            img.position-absolute.rounded.w-100.h-100(src='img/service-4.jpg', style='object-fit: cover;', alt='')
+                                    .col-md-6
+                                        h3.mb-4.text-light 25 Years Of Experience In Financial Support
+                                        p.mb-4.text-light
+                                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+                                            | diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                                            | clita duo justo erat amet.
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Secured Loans
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Credit Facilities
+                                        p.text-light
+                                            i.fa.fa-check.text-primary.me-3
+                                            | Cash Advanced
+                                        a.btn.btn-primary.py-3.px-5.mt-3(href='') Read More
+
+        // Team
+        .container-xxl.py-5
+            .container
+                .text-center.mx-auto.wow(style='max-width: 600px;')
+                    p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Our Team
+                    h1.display-5.mb-5.text-light Exclusive Team
+                .row.g-4
+                    .col-lg-4.col-md-6.wow
+                        .team-item
+                            img.img-fluid.rounded(src='img/team-1.jpg', alt='')
+                            .team-text
+                                h4.mb-0.text-light Kate Winslet
+                                .team-social.d-flex
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-facebook-f
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-twitter
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-instagram
+                    .col-lg-4.col-md-6.wow
+                        .team-item
+                            img.img-fluid.rounded(src='img/team-2.jpg', alt='')
+                            .team-text
+                                h4.mb-0.text-light Jac Jacson
+                                .team-social.d-flex
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-facebook-f
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-twitter
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-instagram
+                    .col-lg-4.col-md-6.wow
+                        .team-item
+                            img.img-fluid.rounded(src='img/team-3.jpg', alt='')
+                            .team-text
+                                h4.mb-0.text-light Doris Jordan
+                                .team-social.d-flex
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-facebook-f
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-twitter
+                                    a.btn.btn-square.rounded-circle.mx-1(href='')
+                                        i.fab.fa-instagram
+
+        // Footer
+        include ./templates/footer

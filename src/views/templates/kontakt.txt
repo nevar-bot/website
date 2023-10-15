@@ -1,0 +1,32 @@
+.container-fluid.callback.my-5.pt-5
+            .container.pt-5
+                .row.justify-content-center
+                    .col-lg-7
+                        .bg-white.border.rounded.p-4.p-sm-5.wow.fadeInUp(data-wow-delay='0.5s')
+                            .text-center.mx-auto.wow.fadeInUp(data-wow-delay='0.1s', style='max-width: 600px;')
+                                p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3
+                                    | Get In Touch
+                                h1.display-5.mb-5 Request A Call-Back
+                            .row.g-3
+                                .col-sm-6
+                                    .form-floating
+                                        input#name.form-control(type='text', placeholder='Your Name')
+                                        label(for='name') Your Name
+                                .col-sm-6
+                                    .form-floating
+                                        input#mail.form-control(type='email', placeholder='Your Email')
+                                        label(for='mail') Your Email
+                                .col-sm-6
+                                    .form-floating
+                                        input#mobile.form-control(type='text', placeholder='Your Mobile')
+                                        label(for='mobile') Your Mobile
+                                .col-sm-6
+                                    .form-floating
+                                        input#subject.form-control(type='text', placeholder='Subject')
+                                        label(for='subject') Subject
+                                .col-12
+                                    .form-floating
+                                        textarea#message.form-control(placeholder='Leave a message here', style='height: 100px')
+                                        label(for='message') Message
+                                .col-12.text-center
+                                    button.btn.btn-primary.w-100.py-3(type='submit') Submit Now
