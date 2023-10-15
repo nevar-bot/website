@@ -28,13 +28,14 @@ html(lang='de')
             .container
                 .row.g-4.align-items-end.mb-4
                     .col-lg-6.wow
-                        img.img-fluid.rounded(src='img/about.svg')
+                        img.img-fluid.rounded.desktop-only(src='img/logo_transparent.webp')
                     .col-lg-6.wow
                         p.d-inline-block.border.rounded.text-primary.fw-semi-bold.py-1.px-3 Über uns
-                        h1.display-5.mb-4.text-light We Help Our Clients To Grow Their Business
+                        h1.display-5.mb-4.text-light Lass #{name} deinen Server verwalten
                         p.mb-4.text-light
-                            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                            | eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                            | #{name} dient dazu, Discord-Nutzer bei der Verwaltung sowie Moderation ihrer Server
+                            | weitestgehend zu unterstützen. Wir bieten eine Vielzahl von Funktionen aus beiden Bereichen,
+                            | die durch andere Befehle zum Spaß oder Information abgerundet werden.
                         .border.rounded.p-4
                             nav
                                 #nav-tab.nav.nav-tabs.mb-3(role='tablist')
@@ -44,45 +45,40 @@ html(lang='de')
                             #nav-tabContent.tab-content
                                 #nav-story.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='nav-story-tab')
                                     p.text-light
-                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                        | amet diam et eos labore.
-                                    p.mb-0.text-light
-                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                        | Clita erat ipsum et lorem et sit
+                                        | Während der Corona-Pandemie 2020 haben wir begonnen, Discord-Bots zu entwickeln.
+                                        | Nach unzähligen Bots, Höhen und Tiefen existiert nun seit Juli 2022 #{name}
+                                        | welcher seit Januar 2023 auch verifiziert ist.
                                 #nav-mission.tab-pane.fade(role='tabpanel', aria-labelledby='nav-mission-tab')
                                     p.text-light
-                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                        | amet diam et eos labore.
-                                    p.mb-0.text-light
-                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                        | Clita erat ipsum et lorem et sit
+                                        | Mit #{name} wollen wir einen breit gefächerten Bot anbieten, der die
+                                        | wichtigsten Bereiche eines Discord-Servers abdeckt. Der Fokus liegt dabei auf
+                                        | Verwaltung und Moderation.
                                 #nav-vision.tab-pane.fade(role='tabpanel', aria-labelledby='nav-vision-tab')
                                     p.text-light
-                                        | Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                        | amet diam et eos labore.
-                                    p.mb-0.text-light
-                                        | Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                        | Clita erat ipsum et lorem et sit
+                                        | Unser Ziel ist es, dass #{name} in Zukunft auf möglichst vielen Discord-Servern
+                                        | zum Einsatz kommt und diese effizienter macht. Soweit wie es uns möglich ist,
+                                        | möchten wir #{name} kostenlos anbieten und weiterhin durch unsere privaten
+                                        | Mittel finanzieren.
                 .border.rounded.p-4.wow
                     .row.g-4
                         .col-lg-4.wow
                             .h-100
                                 .d-flex
                                     .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
-                                        i.fa.fa-times.text-white
+                                        i.fa-solid.fa-users.text-white
                                     .ps-3.text-light
-                                        h4.text-light No Hidden Cost
-                                        span Clita erat ipsum lorem sit sed stet duo justo
+                                        h4.text-light kleines Team
+                                        span Da #{name} ein vergleichsweise kleiner Bot ist, können wir besser auf Feedback der Nutzer eingehen.
                                     .border-end.d-none.d-lg-block
                                 .border-bottom.mt-4.d-block.d-lg-none
                         .col-lg-4.wow
                             .h-100
                                 .d-flex
                                     .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
-                                        i.fa.fa-users.text-white
+                                        i.fa-solid.fa-money-bill-wave.text-white
                                     .ps-3.text-light
-                                        h4.text-light Dedicated Team
-                                        span Clita erat ipsum lorem sit sed stet duo justo
+                                        h4.text-light Privat-finanziert
+                                        span Dadurch dass wir #{name} durch unseren private Mittel finanzieren, können wir diesen komplett kostenlos anbieten.
                                     .border-end.d-none.d-lg-block
                                 .border-bottom.mt-4.d-block.d-lg-none
                         .col-lg-4.wow
@@ -91,8 +87,8 @@ html(lang='de')
                                     .flex-shrink-0.btn-lg-square.rounded-circle.bg-primary
                                         i.fa.fa-phone.text-white
                                     .ps-3.text-light
-                                        h4.text-light 24/7 Available
-                                        span Clita erat ipsum lorem sit sed stet duo justo
+                                        h4.text-light #{commandCount} Befehle
+                                        span Durch eine große Anzahl an Befehlen deckt #{name} die wichtigsten Bereiche ab. Dadurch ist es nicht mehr nötig, viele Bots zu nutzen.
 
         // Facts
         .container-fluid.facts.my-5.py-5
