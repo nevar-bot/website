@@ -20,9 +20,9 @@
     $(window).scroll(function () {
         if ($(window).width() < 992) {
             if ($(this).scrollTop() > 45) {
-                $('.fixed-top').addClass('bg-white shadow');
+                $('.fixed-top').addClass('bg-dark shadow');
             } else {
-                $('.fixed-top').removeClass('bg-white shadow');
+                $('.fixed-top').removeClass('bg-dark shadow');
             }
         } else {
             if ($(this).scrollTop() > 45) {
