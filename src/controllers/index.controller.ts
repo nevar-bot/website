@@ -5,7 +5,7 @@ export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
             /* Get bot data from api */
-            const stats: any = (await axios.get("https://api.nevar.eu/client/sstats")).data.res;
+            const stats: any = (await axios.get("https://api.nevar.eu/client/stats")).data.res;
             const staffs: any = (await axios.get("https://api.nevar.eu/client/staffs")).data.res.staffs;
             const commands: any = (await axios.get("https://api.nevar.eu/interactions/commands")).data.res.command_list;
 
