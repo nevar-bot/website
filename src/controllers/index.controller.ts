@@ -5,7 +5,7 @@ export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
             /* Get bot data from api */
-            const stats: any = (await axios.get("https://api.nevar.eu/client/stats")).data.res;
+            const stats: any = (await axios.get("https://api.nevar.eu/client/sstats")).data.res;
             const staffs: any = (await axios.get("https://api.nevar.eu/client/staffs")).data.res.staffs;
             const commands: any = (await axios.get("https://api.nevar.eu/interactions/commands")).data.res.command_list;
 
@@ -24,13 +24,13 @@ export default {
                 staffs: staffs || []
             });
         }catch(error){
-            /* Render 500 error page */
-            res.status(500).render("errors/500", {
+            /* Render 503 error page */
+            res.status(503).render("errors/503", {
                 name: "Nevar",
-                title: "Fehler 500",
+                title: "Fehler 503",
                 metaData: {
-                    description: "500 Internal Server Error",
-                    keywords: "Nevar, Discord, Bot, 500, Internal Server Error"
+                    description: "500 Service Unavailable",
+                    keywords: "Nevar, Discord, Bot, 503, Service Unavailable"
                 }
             });
         }
