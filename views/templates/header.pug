@@ -1,0 +1,52 @@
+header#header.d-flex.align-items-center
+    .container.d-flex.align-items-center.justify-content-between
+        .logo
+            a(href='/')
+                img.img-fluid(src='img/logo_transparent_130x133.webp', alt='Nevar Logo')
+        nav#navbar.navbar
+            ul
+                li
+                    a.nav-link.scrollto.active(href='/#home') Home
+                li
+                    a.nav-link.scrollto(href='/#about') Über
+                li
+                    a.nav-link.scrollto(href='/#features') Features
+                li
+                    a.nav-link.scrollto(href='/#advantages') Vorteile
+                li
+                    a.nav-link.scrollto(href='/#team') Team
+                li
+                    a.nav-link.scrollto(href='/#faq') FAQ
+                li
+                    a.nav-link(href='/commands') Befehle
+                li
+                    a.nav-link(href='https://cp.nevar.eu' rel='noopener' target='_blank') Dashboard
+                li
+                    a.nav-link(href='/invite' rel='noopener' target='_blank') Einladen
+                li.dropdown
+                    a(href='#')
+                        span Weiteres
+                        |
+                        i.bi.bi-chevron-down
+                    ul
+                        li
+                            a(href='/support' rel='noopener' target='_blank') Support
+                        li
+                            a(href='/vote') Voten
+                        li
+                            a(href='/contact') Kontakt
+                        li.dropdown
+                            a(href='#')
+                                span Rechtliches
+                                |
+                                i.bi.bi-chevron-right
+                            ul
+                                li
+                                    a(href='/terms') Nutzungsbedingungen
+                                li
+                                    a(href='/bot-privacy') Bot-Datenschutz
+                                li
+                                    a(href='/privacy') Datenschutzerklärung
+                                li
+                                    a(href='/imprint') Impressum
+            i.bi.bi-list.mobile-nav-toggle

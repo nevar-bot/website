@@ -1,0 +1,195 @@
+doctype html
+html(lang='de')
+    include templates/head
+    body
+        // ======= Home Section =======
+        section.no-section-after#home
+            .home-container
+                a.home-logo(href='/', data-aos='zoom-in')
+                    img(src='img/logo_transparent_130x133.webp', alt='')
+                h1(data-aos='zoom-in') #{name} - Effizienz weitergedacht
+                h2(data-aos='fade-up') Ein moderner Discord-Bot zur Unterstützung der Moderierung sowie Verwaltung deines Servers
+                a.btn-invite.scrollto(data-aos='fade-up', data-aos-delay='200', href='/invite' rel='noopener' target='_blank') Einladen
+        // ======= Header =======
+        include templates/header
+        main#main
+            // ======= About Section =======
+            section#about.about
+                .container
+                    .section-title(data-aos='fade-up')
+                        h2 Über #{name}
+                        p Lass #{name} die Moderation deines Discord-Servers übernehmen
+                    .row
+                        .col-lg-6(data-aos='fade-right')
+                            .image
+                                img.img-fluid(src='svg/manypixels_ai.svg', alt='')
+                        .col-lg-6(data-aos='fade-left')
+                            .content.pt-4.pt-lg-0.pl-0.pl-lg-3
+                                h3 Das zeichnet uns aus:
+                                p
+                                    | Wir wollen einen Allrounder-Bot mit Fokus auf Moderation schaffen, der sich durch seine Einfachheit und Effizienz auszeichnet.
+                                ul
+                                    li
+                                        i.bx.bx-check-double
+                                        |  #{guildCount} Server nutzen #{name} bereits
+                                    li
+                                        i.bx.bx-check-double
+                                        |  #{commandCount} Befehle kannst du kostenfrei nutzen
+                                    li
+                                        i.bx.bx-check-double
+                                        | Da #{name} open-source ist, kann jeder den Code auf GitHub einsehen und mitgestalten
+                                p
+                                    | Durch eine recht kleine Community können wir besser auf Anregungen und Kritik der Nutzer*innen eingehen.
+                                    | Da wir #{name} jedoch in unserer Freizeit entwickeln, bitten wir hier um Verständnis, wenn es Mal etwas länger dauern sollte :)
+            // ======= Features Section =======
+            section#features.features
+                .container
+                    .section-title(data-aos='fade-up')
+                        h2 Funktionen
+                        p Aus den folgenden Bereichen decken wir ein breites Spektrum an Funktionen ab:
+                    .row
+                        .col-lg-6(data-aos='fade-right')
+                            .tab-content
+                                #features-tab-1.tab-pane.active.show
+                                    figure
+                                        img.img-fluid(src='svg/manypixels_manager.svg', alt='')
+                                #features-tab-2.tab-pane
+                                    figure
+                                        img.img-fluid(src='svg/manypixels_lawyer.svg', alt='')
+                                #features-tab-3.tab-pane
+                                    figure
+                                        img.img-fluid(src='svg/manypixels_football_team.svg', alt='')
+                                #features-tab-4.tab-pane
+                                    figure
+                                        img.img-fluid(src='svg/manypixels_seo.svg', alt='')
+                        .col-lg-6.mt-4.mt-lg-0(data-aos='fade-left')
+                            ul.nav.nav-tabs.flex-column
+                                li.nav-item
+                                    a.nav-link.active.show(data-bs-toggle='tab', href='#features-tab-1')
+                                        h4 Administration
+                                        p Du kannst automatisch Rollen vergeben, Embeds versenden oder ein Ideen-Management-System nutzen
+                                li.nav-item.mt-2
+                                    a.nav-link(data-bs-toggle='tab', href='#features-tab-2')
+                                        h4 Moderation
+                                        p Von AI-Moderation bis zum Verwarnsystem haben wir die wichtigsten Bereiche abgedeckt
+                                li.nav-item.mt-2
+                                    a.nav-link(data-bs-toggle='tab', href='#features-tab-3')
+                                        h4 Minispiele
+                                        p Verschiedene Minispiele für den Spaß zwischendurch sind ebenfalls enthalten
+                                li.nav-item.mt-2
+                                    a.nav-link(data-bs-toggle='tab', href='#features-tab-4')
+                                        h4 Informationen
+                                        p Außerdem gibt es viele Befehle, um unterschiedlichste Informationen zu erhalten
+            // ======= Advantages Section =======
+            section#advantages.advantages
+                .container
+                    .section-title(data-aos='fade-up')
+                        h2 Vorteile
+                        p Folgende Vorteile bieten wir dir:
+                    .row
+                        .col-lg-6.order-2.order-lg-1
+                            .icon-box.mt-5.mt-lg-0(data-aos='fade-up')
+                                i.fa-solid.fa-wrench
+                                h4 Updates
+                                p
+                                    | Wir arbeiten ständig an neuen Funktionen und verbessern die bereits vorhandenen
+                            .icon-box.mt-5(data-aos='fade-up', data-aos-delay='100')
+                                i.fa-solid.fa-sack-dollar
+                                h4 Kostenfrei
+                                p
+                                    | Alle Funktionen sind komplett kostenfrei nutzbar
+                            .icon-box.mt-5(data-aos='fade-up', data-aos-delay='200')
+                                i.fa-brands.fa-github
+                                h4 Open-source
+                                p #{name} ist open-source, und kann durch jeden auf GitHub eingesehen und mitgestaltet werden
+                            .icon-box.mt-5(data-aos='fade-up', data-aos-delay='300')
+                                i.fa-solid.fa-chart-simple
+                                h4 Verlässlich
+                                p Mit einer Uptime von 99,9% ist #{name} stets verfügbar
+                        .image.col-lg-6.order-1.order-lg-2(style='background-image: url("svg/manypixels_checklist.svg");', data-aos='fade-left', data-aos-delay='100')
+            // ======= Team Section =======
+            section#team.team
+                .container
+                    .section-title(data-aos='fade-up')
+                        h2 Team
+                        p Wir sind ein kleines Team, das #{name} in seiner Freizeit betreibt
+                    .row.justify-content-center
+                        each staff in staffs
+                            .col-lg-2.col-md-6.d-flex.align-items-stretch.col-sm-12
+                                .member(data-aos='zoom-in')
+                                    .member-img
+                                        img.img-fluid(src=staff.avatar + "?size=256" , alt='Avatar von ' + staff.displayName, style='width:200px;height:200px;')
+                                    .member-info
+                                        h4 #{staff.displayName}
+                                        span @#{staff.username}
+
+            // ======= Frequently Asked Questions Section =======
+            section.no-section-after#faq.faq
+                .container
+                    .section-title(data-aos='fade-up')
+                        h2 Häufig gestellte Fragen
+                        p Hier findest du Antworten auf häufig gestellte Fragen
+                    ul.faq-list
+                        li(data-aos='fade-up')
+                            a.collapsed.faq-title(data-bs-toggle='collapse', data-bs-target='#faq1')
+                                | Wie lade ich #{name} auf meinen Server ein?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq1.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | Über den folgenden&nbsp;
+                                    a.faq-answer-link(href='/invite' rel='noopener' target='_blank') Link&nbsp;
+                                    | kannst du #{name} auf deinen Server einladen.
+                        li(data-aos='fade-up', data-aos-delay='100')
+                            a.collapsed(data-bs-toggle='collapse', data-bs-target='#faq2')
+                                | Welche Befehle gibt es?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq2.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | Du kannst dir auf dieser&nbsp;
+                                    a.faq-answer-link(href='/commands') Seite&nbsp;
+                                    | eine vollständige Liste aller Befehle ansehen. Zudem sind unter dem /help-Befehl alle Befehle aufgelistet.
+                        li(data-aos='fade-up', data-aos-delay='200')
+                            a.collapsed(data-bs-toggle='collapse', data-bs-target='#faq3')
+                                | Wie melde ich einen Fehler, der mir aufgefallen ist?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq3.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | Du kannst Fehler über unser&nbsp;
+                                    a.faq-answer-link(href='/contact') Kontaktformular
+                                    | , direkt auf unserem&nbsp;
+                                    a.faq-answer-link(href='/support' rel='noopener' target='_blank') Discord-Server&nbsp;
+                                    | oder über den /reportbug-Befehl an uns melden.
+                        li(data-aos='fade-up', data-aos-delay='300')
+                            a.collapsed(data-bs-toggle='collapse', data-bs-target='#faq4')
+                                | Kann ich die Berechtigungen der Befehle anpassen?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq4.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | #{name} nutzt vollständig das neue Berechtigungssystem von Discord. Unter » Servereinstellungen ❯ Integrationen ❯ #{name} « kannst du für jeden Befehl festlegen, welche Nutzer*innen oder Rollen diesen in welchen Kanälen nutzen können.
+                        li(data-aos='fade-up', data-aos-delay='400')
+                            a.collapsed(data-bs-toggle='collapse', data-bs-target='#faq5')
+                                | Gibt es #{name} auch in anderen Sprachen?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq5.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | Derzeit ist nur Deutsch verfügbar. Wir arbeiten jedoch daran, #{name} in weiteren Sprachen anzubieten.
+                        li(data-aos='fade-up', data-aos-delay='500')
+                            a.collapsed(data-bs-toggle='collapse', data-bs-target='#faq6')
+                                | Ist #{name} vertrauenswürdig?
+                                i.bx.bx-chevron-down.icon-show
+                                i.bx.bx-x.icon-close
+                            #faq6.collapse(data-bs-parent='.faq-list')
+                                p
+                                    | Überzeuge dich davon gerne selbst: #{name} ist open-source und kann von jedem auf&nbsp;
+                                    a.faq-answer-link(href='/redirect/github' rel='noopener' target='_blank') GitHub&nbsp;
+                                    | eingesehen werden.
+            // End Frequently Asked Questions Section
+
+        // End #main
+        // ======= Footer =======
+        include templates/footer

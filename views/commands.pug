@@ -1,0 +1,39 @@
+doctype html
+html(lang='de')
+    include templates/head
+    body
+        include templates/header
+        main#main
+            // ======= Breadcrumbs =======
+            section.no-section-after.breadcrumbs
+                .container
+                    .d-flex.justify-content-between.align-items-center
+                        h2 Befehle
+                        ol
+                            li
+                                a(href='/') Home
+                            li Kontakt
+            section.contact.inner-page.no-section-after
+                .container
+                    .section-title
+                        h2 Befehle
+                        p Hier findest du alle Befehle, die du nutzen kannst
+                    .row
+                        .col-md-12
+                            input.form-control.mb-3(type='text', placeholder='Suche nach Befehlen...')
+
+                        .col-md-4
+                            .row
+                                .col-md-12
+                                    .card.text-white.bg-dark.mb-3
+                                        .card-header.h4 Kategorien
+                                        .card-body
+                                            .card.text-white.bg-darker.mb-3
+                                                .card-header.p Moderation
+                                            .card.text-white.bg-darker
+                                                .card-header.p Moderation
+
+
+
+        // ======= Footer =======
+        include templates/footer

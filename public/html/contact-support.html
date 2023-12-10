@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
+    .email-container { max-width: 600px; margin: 50px auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+    h2 { color: #333333; }
+    p { color: #666666; margin-bottom: 20px; }
+    .contact-details { border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="email-container">
+  <h2>Neue Anfrage im Kontaktformular</h2>
+  <p>Diese sollte bis spätestens zum <strong>{{date}}</strong> bearbeitet werden.</p>
+  <p>Folgende Daten sind gegeben:</p>
+
+  <div class="contact-details">
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Email:</strong> {{email}}</p>
+    <p><strong>Thema:</strong> {{subject}}</p>
+    <p><strong>Nachricht:</strong> {{message}}</p>
+  </div>
+</div>
+</body>
+</html>

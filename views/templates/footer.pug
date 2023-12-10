@@ -1,0 +1,39 @@
+footer#footer
+    .footer-top
+        .container
+            .row.justify-content-center
+                .col-lg-6
+                    a.scrollto.footer-logo(href='/')
+                        img(src='img/logo_transparent.webp', alt='')
+                    h3 #{name}
+                    p
+                        | Mit #{name} bieten wir einen modernen Discord-Bot zur Unterstützung der Moderierung sowie Verwaltung deines Servers
+            .social-links
+                a.discord(href='/support' rel='noopener' target='_blank')
+                    i.fa-brands.fa-discord
+                a.x(href='/redirect/x' rel='noopener' target='_blank')
+                    i.fa-brands.fa-x-twitter
+                a.instagram(href='/redirect/instagram' rel='noopener' target='_blank')
+                    i.fa-brands.fa-instagram
+                a.github(href='/redirect/github' rel='noopener' target='_blank')
+                    i.fa-brands.fa-github
+    .container.footer-bottom.clearfix
+        .copyright
+            | &copy; Copyright&nbsp;
+            strong
+                span #{name}
+            | . All Rights Reserved
+        .credits
+            | Designed by&nbsp;
+            a(href='https://bootstrapmade.com/') BootstrapMade
+a.back-to-top.d-flex.align-items-center.justify-content-center.scrollto(href='#home')
+    i.bi.bi-arrow-up-short
+
+// Vendor JS
+script(src='js/jquery.min.js')
+script(src='vendor/aos/aos.js')
+script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+script(src='vendor/glightbox/js/glightbox.min.js')
+script(src='vendor/swiper/swiper-bundle.min.js')
+// Main JS
+script(src='js/main.js')
