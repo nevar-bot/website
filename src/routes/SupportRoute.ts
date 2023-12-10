@@ -1,8 +1,11 @@
-import express, { Router } from "express";
-const router: Router = express.Router();
+import { Router } from "express";
+import SupportController from "@controllers/support.controller";
 
-import SupportRoute from "@controllers/support.controller";
+/* Create router */
+const router: Router = Router();
 
-router.get("/", SupportRoute.get);
+/* Register routes */
+router.get("/", SupportController.get);
 
+/* Export router */
 export default router;
