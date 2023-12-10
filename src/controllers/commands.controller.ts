@@ -3,16 +3,30 @@ import axios from "axios";
 
 export default {
     async get(req: Request, res: Response): Promise<void> {
-        const clientCommands: any = await axios.get("https://api.nevar.eu/interactions/commands");
+        try {
+            /* Get commands from api */
+            const { res } = (await axios.get("https://api.nevar.eu/interactions/commands")).data;
 
-        res.render("commands", {
-            name: "Nevar",
-            title: "Befehle",
-            metaData: {
-                description: "Nevar Discord-Bot",
-                keywords: "Nevar, Discord"
-            },
-            commands: clientCommands?.data,
-        });
+            /* Render commands page */
+            res.render("commands", {
+                name: "Nevar",
+                title: "Befehle",
+                metaData: {
+                    description: "Alle Befehle des Nevar Discord-Bots",
+                    keywords: "Nevar, Discord, Bot, Commands, Befehle"
+                },
+                commands: res.command_list
+            });
+        }catch(error){
+            /* Render 500 error page */
+            res.status(500).render("errors/500", {
+                name: "Nevar",
+                title: "Fehler 500",
+                metaData: {
+                    description: "500 Internal Server Error",
+                    keywords: "Nevar, Discord, Bot, 500, Internal Server Error"
+                }
+            });
+        }
     }
 };
