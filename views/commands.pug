@@ -38,7 +38,7 @@ html(lang='de')
                                         h4 Beschreibung
                                         p #{command.localizedDescriptions.de || command.description}
                                         h4 Cooldown
-                                        p #{command.cooldown} Sekunden
+                                        p #{command.cooldown} #{command.cooldown > 1 ? "Sekunden" : "Sekunde"}
 
 
 
