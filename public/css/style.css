@@ -996,7 +996,7 @@ section:not(.no-section-after):after {
 }
 
 .command-container {
-  max-height: 445px;
+  max-height: 460px;
   overflow-y: auto;
 }
 
