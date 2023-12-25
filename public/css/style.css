@@ -949,3 +949,68 @@ section:not(.no-section-after):after {
   font-size: 13px;
   padding-top: 5px;
 }
+
+/* Commands */
+.commands-active-category {
+  background-color: #fb8122!important;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e1e2e2;
+  margin-bottom: 15px;
+  &:hover {
+    background-color: #fb8122!important;
+    cursor: pointer;
+  }
+}
+
+.command-title {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background: #fb8122;
+  }
+}
+
+.command-container {
+  max-height: 445px;
+  overflow-y: auto;
+}
+
+.command-body {
+  display: none;
+  & h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e1e2e2;
+    margin-bottom: 15px;
+  }
+}
+
+.command .command-title:hover {
+  background-color: #333941!important;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #e1e2e2!important;
+}
+
+input {
+  border: 0!important;
+}
+
+textarea {
+  border: 0!important;
+}
+textarea::placeholder {
+  color: #e1e2e2!important;
+}

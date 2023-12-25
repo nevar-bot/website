@@ -40,13 +40,13 @@ html(lang='de')
                             form.contact-form(action='/contact/submit', method='post', role='form', data-aos='fade-left')
                                 .row
                                     .col-md-6.form-group
-                                        input#name.rounded.form-control(type='text', name='name', placeholder='Name')
+                                        input#name.bg-secondary.text-white.rounded.form-control(type='text', name='name', placeholder='Name')
                                     .col-md-6.form-group.mt-3.mt-md-0
-                                        input#email.rounded.form-control(type='email', name='email', placeholder='Email-Adresse*', required='')
+                                        input#email.bg-secondary.text-white.rounded.form-control(type='email', name='email', placeholder='Email-Adresse*', required='')
                                 .form-group.mt-3
-                                    input#subject.rounded.form-control(type='text', name='subject', placeholder='Thema*', required='')
+                                    input#subject.bg-secondary.text-white.rounded.form-control(type='text', name='subject', placeholder='Thema*', required='')
                                 .form-group.mt-3
-                                    textarea.rounded.form-control(name='message', rows='5', placeholder='Nachricht*', required='')
+                                    textarea.bg-secondary.text-white.rounded.form-control(name='message', rows='5', placeholder='Nachricht*', required='')
                                 .my-3
                                     .error-message
                                     .sent-message
