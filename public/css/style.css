@@ -25,6 +25,21 @@ h6 {
   font-family: "Montserrat", sans-serif;
 }
 
+input {
+  border: 0!important;
+}
+
+input::placeholder {
+  color: #e1e2e2!important;
+}
+
+textarea {
+  border: 0!important;
+}
+textarea::placeholder {
+  color: #e1e2e2!important;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -1000,17 +1015,9 @@ section:not(.no-section-after):after {
   cursor: pointer;
 }
 
-input::placeholder {
-  color: #e1e2e2!important;
-}
-
-input {
-  border: 0!important;
-}
-
-textarea {
-  border: 0!important;
-}
-textarea::placeholder {
-  color: #e1e2e2!important;
+.category-overview-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e1e2e2;
+    margin-bottom: 15px;
 }

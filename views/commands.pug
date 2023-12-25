@@ -22,15 +22,15 @@ html(lang='de')
                         .col-md-12
                             input.shadow-none.bg-dark.text-white.form-control.mb-3(id='commands-search' type='text', placeholder=`Suche aus ${commands.filter(command => command.category !== "staff" && command.category !== "owner").length} Befehlen 🔎`)
                     .row
-                        .col-md-4
+                        .col-md-3
                             .card.text-white.bg-dark.mb-3
-                                .card-header.h4 Kategorien
+                                .card-header.category-overview-title.h4 Kategorien
                                 .card-body
                                     each category in [["all", "Alle"], ["administration", "Administration"], ["moderation", "Moderation"], ["fun", "Fun"], ["minigames", "Minispiele"], ["misc", "Sonstiges"]]
                                         .card.text-white.bg-secondary.mb-3.category-title(data-category=category[0])
                                             .card-header.p #{category[1].charAt(0).toUpperCase() + category[1].slice(1)}
 
-                        .col-md-8.command-container
+                        .col-md-9.command-container
                             each command in commands.filter(command => command.category !== "staff" && command.category !== "owner")
                                 .card.text-white.bg-dark.mb-3.command(data-category=command.category)
                                     .card-header.h4.command-title #{command.name}
