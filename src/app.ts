@@ -15,6 +15,7 @@ import InviteRoute from "@routes/InviteRoute";
 import SupportRoute from "@routes/SupportRoute";
 import RedirectRoute from "@routes/RedirectRoute";
 import VoteRoute from "@routes/VoteRoute";
+import ImprintRoute from "@routes/ImprintRoute";
 
 /* Load config */
 const config: any = toml.parse(fs.readFileSync("./config.toml", "utf8"));
@@ -36,6 +37,7 @@ app.use("/invite", InviteRoute);
 app.use("/support", SupportRoute);
 app.use("/redirect", RedirectRoute);
 app.use("/vote", VoteRoute);
+app.use("/imprint", ImprintRoute);
 
 /* Start server */
 app.listen(config.PORT, (): void => {
