@@ -1,48 +1,58 @@
 $(".category-title").click(function () {
-    $(".category-title").removeClass("commands-active-category");
-    $(this).css({
+    const $this = $(this);
+    $(".category-title").removeClass("commands-active-category").css("transform", "scale(1)");
+
+    $this.addClass("commands-active-category").css({
         "transform": "scale(0.98)",
         "transition": "transform 0.3s ease"
     });
-    $(this).addClass("commands-active-category");
-    const category = $(this).data("category");
+
+    const category = $this.data("category");
     $(".command").hide();
-    if (category === "all") {
-        $(".command").show();
-    } else {
-        $(".command[data-category='" + $(this).data("category") + "']").show();
-    }
+    if(category === "all") $(".command").show();
+    else $(".command[data-category='" + $this.data("category") + "']").show();
 
-    const visibleCommands = $('.command:visible').length;
-    $('#commands-search').attr('placeholder', `Suche aus ${visibleCommands} Befehlen 🔎`);
+    $('#commands-search').attr('placeholder', `Suche aus ${$('.command:visible').length} Befehlen 🔎`);
 
-    setTimeout(function () {
-        $(this).css({
-            "transform": "scale(1)",
-            "transition": "transform 0.3s ease"
-        });
-    }.bind(this), 250);
+    setTimeout(() => $this.css("transform", "scale(1)"), 250);
 });
 
-$(".command").click(function (event) {
+
+$(".command").on("click", function (event) {
     if (!$(event.target).hasClass('command-title')) return;
+
     const body = $(this).find(".command-body");
     $(".command-body").not(body).slideUp();
     body.slideToggle();
 });
 
+
 $('#commands-search').on('input', function () {
-    const searchText = $(this).val().toLowerCase();
+    const searchText = $(this).val().toLowerCase().trim();
     const currentCategory = $('.commands-active-category').data('category');
+
     $('.command').each(function () {
-        const commandCategory = $(this).data('category');
-        const commandTitle = $(this).find('.command-title').text().toLowerCase();
+        const $command = $(this);
+        const commandCategory = $command.data('category');
+        const commandTitle = $command.find('.command-title').text().toLowerCase();
         const isMatchingCategory = commandCategory === currentCategory || currentCategory === 'all';
-        const isMatchingSearch = commandTitle.includes(searchText.trim());
-        $(this).toggle(isMatchingCategory && isMatchingSearch);
+        const isMatchingSearch = commandTitle.includes(searchText);
+        $command.toggle(isMatchingCategory && isMatchingSearch);
     });
 });
 
+
 $(function () {
-    $(".category-title").first().addClass("commands-active-category");
-})
+    const $firstCategoryTitle = $(".category-title").first();
+
+    $firstCategoryTitle.addClass("commands-active-category").css({
+        "transform": "scale(0.98)",
+        "transition": "transform 0.3s ease"
+    });
+
+    setTimeout(() => {
+        $firstCategoryTitle.css({
+            "transform": "scale(1)"
+        });
+    }, 250);
+});
