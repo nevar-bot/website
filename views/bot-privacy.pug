@@ -2,6 +2,8 @@ doctype html
 html(lang='de')
     include templates/head
     body
+        include templates/cookieBanner
+        // ======= Header =======
         include templates/header
         main#main
             // ======= Breadcrumbs =======
@@ -12,13 +14,51 @@ html(lang='de')
                         ol
                             li
                                 a(href='/') Home
+                            li Rechtliches
                             li Bot-Datenschutzerklärung
-            section.contact.inner-page.no-section-after
+            section.bot-privacy.inner-page.no-section-after
                 .container
                     .section-title
                         h2 Bot-Datenschutzerklärung
                         p Angaben gemäß Discord Developer Richtlinien
                     .row
+                        .col-md-12
+                            h3 Vorwort
+                            p Die nachfolgende Datenschutzerklärung regelt die Erfassung, Verwendung und Offenlegung von Daten durch den Discord-Bot #{name} (nachfolgend als "der Bot" oder "Nevar" bezeichnet) gemäß den Bestimmungen der Discord Developer Richtlinien.
+                            p Bitte lesen Sie diese Datenschutzerklärung sorgfältig durch, bevor Sie den Bot verwenden. Durch die Verwendung von #{name} erklären Sie sich mit den unten aufgeführten Punkten einverstanden. Sind Sie nicht mit der Datenschutzerklärung einverstanden, verwenden Sie #{name} bitte nicht.
+                            p Das Staff-Team von Nevar, als Betreiber und Eigentümer, verwendet die Begriffe "wir" und "uns" um sich zu beziehen.
+
+
+                            h3 Erfasste Daten
+                            h5 Serverdaten
+                            p #{name} erfasst und speichert Daten, die für die Funktionalität des Bots notwendig sind. Dazu zählen Server IDs, Channel IDs sowie Emoji und Sticker IDs.
+                            h5 Nachrichteninhalte
+                            p Zur Bereitstellung von Funktionen wie dem KI-Chat und der KI-gestützten Chatmoderation werden Nachrichteninhalte erfasst. Diese werden ausschließlich für diese Zwecke genutzt, und nicht von uns gespeichert.
+                            p Für den KI-Chat werden Nachrichteninhalte an die API von "OpenAI" gesendet. Die Datenschutzerklärung von OpenAI finden Sie unter https://openai.com/privacy/
+                            p Für die KI-gestützte Chatmoderation werden Nachrichteninhalte an die "Perspective" API von "Google" gesendet. Die Datenschutzerklärung von Perspective finden Sie unter https://policies.google.com/privacy
+                            p Die Übermittlung findet anonymisiert statt, die Nachrichteninhalte sind keinem Benutzer zuordenbar. Ist die Übermittlung nicht erwünscht, können beide Funktionen deaktiviert werden. Anschließend werden keine Nachrichteninhalte mehr übermittelt.
+                            h5 Benutzerdaten
+                            p #{name} erfasst keine personenbezogenen Daten von Benutzern, außer die jeweilige Account ID. Daten wie E-Mail-Adressen, Benutzernamen oder sonstige zuordenbare Daten werden weder erfasst noch gespeichert.
+                            h5 Weitere Daten
+                            p Andere Daten wie Sprachnachrichten, Bilder, Videos, Dateien und Sprachaktivitäten werden nicht erfasst oder gespeichert.
+
+                            h3 Verwendung der Daten
+                            p Alle von #{name} erfassten Daten dienen ausschließlich der Bereitstellung von Funktionen des Bots.
+                            p Keine von uns erfassten Daten werden an Dritte weitergegeben oder für andere Zwecke verwendet, es sei denn dies ist gesetzlich erforderlich oder wir weisen ausdrücklich darauf hin.
+
+                            h3 Datensicherheit
+                            p Wir treffen angemessene technische und organisatorische Maßnahmen, um die erfassten Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.
+                            p Es werden Sicherheitsvorkehrungen getroffen, um sicherzustellen, dass die Daten sicher und geschützt bleiben. Dazu zählen sichere und regelmäßig aktualisierte Passwörter, tagesaktuelle Backups, die Verhinderung von Datenbankzugriffen von Außen und vieles mehr.
+
+                            h3 Änderungen der Datenschutzerklärung
+                            p Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit und nach eigenem Ermessen zu ändern oder zu aktualisieren. Die aktualisierte Version wird auf dieser Website veröffentlicht. Eine Benachrichtigung über Änderungen können wir nicht gewährleisten. Es liegt in Ihrer Verantwortung, regelmäßig nach Aktualisierungen auf dieser Seite zu schauen.
+                            p Durch die fortgesetzte Nutzung des Bots nach einer Aktualisierung der Datenschutzerklärung erklären Sie sich mit den geänderten Punkten einverstanden.
+
+                            h3 Kontakt
+                            p Bei Fragen, Anmerkungen oder Bedenken bezüglich #{name} oder dieser Datenschutzerklärung können Sie uns kontaktieren. Die dafür notwendigen Daten finden Sie entweder im Impressum oder auf unserer Kontaktseite.
+                            p.mt-5 Letzte Aktualisierung: 26. Dezember 2023
+
+
 
         // ======= Footer =======
         include templates/footer

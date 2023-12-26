@@ -2,6 +2,8 @@ doctype html
 html(lang='de')
     include templates/head
     body
+        include templates/cookieBanner
+        // ======= Header =======
         include templates/header
         main#main
             // ======= Breadcrumbs =======
@@ -22,9 +24,9 @@ html(lang='de')
                     .row
                         .col-md-12
                             h3 Vorwort
-                            p Die folgenden Nutzungsbedingungen regeln die Verwendung des Discord-Bots "Nevar" (im Folgenden "der Bot" oder "Nevar").
-                            p Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie den Bot verwenden. Durch die Verwendung von Nevar erklären Sie sich mit den unten aufgeführten Bedingungen einverstanden. Sind Sie nicht mit den Bedingungen einverstanden, verwenden Sie Nevar bitte nicht.
-                            p Das Staff-Team von Nevar, als Betreiber und Eigentümer, verwendet die Begriffe "wir" und "uns" um sich zu beziehen.
+                            p Die folgenden Nutzungsbedingungen regeln die Verwendung des Discord-Bots "#{name}" (im Folgenden "der Bot" oder "#{name}").
+                            p Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie den Bot verwenden. Durch die Verwendung von #{name} erklären Sie sich mit den unten aufgeführten Bedingungen einverstanden. Sind Sie nicht mit den Bedingungen einverstanden, verwenden Sie #{name} bitte nicht.
+                            p Das Staff-Team von #{name}, als Betreiber und Eigentümer, verwendet die Begriffe "wir" und "uns" um sich zu beziehen.
 
 
                             h3 Bot Funktionalität und Einschränkungen
@@ -45,10 +47,6 @@ html(lang='de')
                             p Der Bot kann Links zu Websites oder Diensten Dritter enthalten. Wir übernehmen keine Verantwortung für den Inhalt, die Datenschutzpraktiken oder die Verfügbarkeit solcher externen Websites oder Dienste.
                             p Die Haftung für grobe Fahrlässigkeit und Vorsatz bleibt von diesem Haftungsausschluss unberührt.
 
-                            h3 Änderungen der Nutzungsbedingungen
-                            p Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit und nach eigenem Ermessen zu ändern oder zu aktualisieren. Die aktualisierten Bedingungen werden auf dieser Website veröffentlicht. Eine Benachrichtigung über Änderungen der Nutzungsbedingungen können wir nicht gewährleisten. Es liegt in Ihrer Verantwortung, regelmäßig nach Aktualisierungen der Nutzungsbedingungen zu schauen.
-                            p Durch die fortgesetzte Nutzung des Bots nach einer Aktualisierung der Nutzungsbedingungen erklären Sie sich mit den geänderten Bedingungen einverstanden.
-
                             h3 Ausschluss von Servern und/oder Nutzer*innen
                             p Wir behalten uns das Recht vor, nach eigenem Ermessen und für eine von uns festgelegte Dauer, Server oder einzelne Nutzer*innen von der Nutzung des Bots auszuschließen.
                             p Diese Entscheidung kann getroffen werden, wenn ein Server oder ein*e Nutzer*in gegen diese Nutzungsbedingungen, die Discord-Nutzungsbedingungen, die Discord-Community Richtlinien oder geltende Gesetze und Vorschriften verstößt.
@@ -56,6 +54,10 @@ html(lang='de')
                             p Die Dauer des Ausschlusses kann dauerhaft oder zeitlich begrenzt sein. Die Entscheidung darüber liegt in unserem Ermessen.
                             p Wir verpflichten uns, auf Nachfrage die Gründe für den Ausschluss mitzuteilen.
                             p Wir unternehmen angemessene Bemühungen, um betroffene Server und/oder Nutzer*innen über den Ausschluss zu informieren. Geschieht dies nicht, berührt dies nicht die Wirksamkeit des Ausschlusses.
+
+                            h3 Änderungen der Nutzungsbedingungen
+                            p Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit und nach eigenem Ermessen zu ändern oder zu aktualisieren. Die aktualisierte Version wird auf dieser Website veröffentlicht. Eine Benachrichtigung über Änderungen können wir nicht gewährleisten. Es liegt in Ihrer Verantwortung, regelmäßig nach Aktualisierungen auf dieser Seite zu schauen.
+                            p Durch die fortgesetzte Nutzung des Bots nach einer Aktualisierung der Nutzungsbedingungen erklären Sie sich mit den geänderten Bedingungen einverstanden.
 
                             h3 Kontakt
                             p Bei Fragen, Anmerkungen oder Bedenken bezüglich #{name} oder diesen Nutzungsbedingungen können Sie uns kontaktieren. Die dafür notwendigen Daten finden Sie entweder im Impressum oder auf unserer Kontaktseite.

@@ -65,6 +65,56 @@ textarea::placeholder {
 }
 
 /*--------------------------------------------------------------
+# Cookie banner
+--------------------------------------------------------------*/
+.cookie-card {
+  display:none!important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  flex-direction: column;
+  background-color: #1d2228;
+  background-clip: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.cookies h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e1e2e2;
+  margin-bottom: 15px;
+
+}
+.cookies span {
+  color: white
+}
+
+.cookies a {
+  text-decoration: none;
+  color: #ffb748;
+  margin-top: 8px;
+}
+
+.cookies a:hover {
+  text-decoration: none;
+  color: #fb8122;
+  margin-top: 8px;
+}
+
+.cookie-trigger {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -1050,10 +1100,11 @@ section:not(.no-section-after):after {
   }
 }
 
-/* ============================================================
-  Terms
-============================================================ */
+/*--------------------------------------------------------------
+# Terms page
+--------------------------------------------------------------*/
 .terms h3 {
+  font-weight: 700;
   margin-top: 30px;
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -1064,4 +1115,77 @@ section:not(.no-section-after):after {
 
 .terms p {
     color: white;
+}
+
+/*--------------------------------------------------------------
+# Bot privacy page
+--------------------------------------------------------------*/
+.bot-privacy h3 {
+  font-weight: 700;
+  margin-top: 30px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #fb8122;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+.bot-privacy h5 {
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #9daaf2;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+
+
+.bot-privacy p {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Imprint page
+--------------------------------------------------------------*/
+.imprint h4 {
+  font-weight: 700;
+  margin-top: 30px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #fb8122;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+
+.imprint p {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Privacy page
+--------------------------------------------------------------*/
+.privacy h4 {
+  font-weight: 700;
+  margin-top: 30px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #fb8122;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+.privacy h5 {
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #9daaf2;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+
+
+.privacy p {
+  color: white;
+}
+
+.privacy li {
+  color: white;
 }
