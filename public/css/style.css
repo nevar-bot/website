@@ -282,7 +282,7 @@ textarea::placeholder {
   transition: 0.5s;
 }
 
-.mobile-nav-toggle.bi-x {
+.mobile-nav-toggle.fa-xmark {
   color: #fff;
 }
 
