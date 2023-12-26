@@ -1049,3 +1049,19 @@ section:not(.no-section-after):after {
     }
   }
 }
+
+/* ============================================================
+  Terms
+============================================================ */
+.terms h3 {
+  margin-top: 30px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #fb8122;
+  text-decoration-thickness: 3px;
+  color: #e1e2e2;
+}
+
+.terms p {
+    color: white;
+}
