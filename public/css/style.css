@@ -965,60 +965,63 @@ section:not(.no-section-after):after {
   padding-top: 5px;
 }
 
-/* Commands */
-.commands-active-category {
-  background-color: #fb8122!important;
-}
-
-.category-title {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #e1e2e2;
-  margin-bottom: 15px;
-  &:hover {
-    background-color: #fb8122!important;
-    cursor: pointer;
-  }
-}
-
-.command-title {
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    border-radius: 10px 0 0 10px;
-    background: #fb8122;
-  }
-}
-
-.command-container {
-  max-height: 460px;
-  overflow-y: auto;
-}
-
-.command-body {
-  display: none;
-  & h4 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #e1e2e2;
-    margin-bottom: 15px;
-  }
-}
-
-.command .command-title:hover {
-  background-color: #333941!important;
-  cursor: pointer;
-}
-
-.category-overview-title {
+/*--------------------------------------------------------------
+# Commands page
+--------------------------------------------------------------*/
+/* Categories container */
+.categories-container {
+  .title {
     font-size: 22px;
     font-weight: 700;
     color: #e1e2e2;
     margin-bottom: 15px;
+  }
+  .category {
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e1e2e2;
+    margin-bottom: 15px;
+    &:hover {
+      background-color: #fb8122!important;
+      cursor: pointer;
+    }
+    &.active {
+      background-color: #fb8122!important;
+    }
+  }
+}
+
+/* Commands container */
+.commands-container {
+  max-height: 465px;
+  overflow-y: auto;
+  .command {
+    .title {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6px;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+        background: #fb8122;
+      }
+    }
+    .title:hover {
+      background-color: #333941!important;
+      cursor: pointer;
+    }
+    .body {
+      display: none;
+      & h4 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e1e2e2;
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
