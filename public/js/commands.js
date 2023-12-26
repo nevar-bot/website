@@ -1,5 +1,9 @@
 $(".category-title").click(function () {
     $(".category-title").removeClass("commands-active-category");
+    $(this).css({
+        "transform": "scale(0.98)",
+        "transition": "transform 0.3s ease"
+    });
     $(this).addClass("commands-active-category");
     const category = $(this).data("category");
     $(".command").hide();
@@ -11,6 +15,13 @@ $(".category-title").click(function () {
 
     const visibleCommands = $('.command:visible').length;
     $('#commands-search').attr('placeholder', `Suche aus ${visibleCommands} Befehlen 🔎`);
+
+    setTimeout(function () {
+        $(this).css({
+            "transform": "scale(1)",
+            "transition": "transform 0.3s ease"
+        });
+    }.bind(this), 250);
 });
 
 $(".command").click(function (event) {
