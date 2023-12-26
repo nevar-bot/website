@@ -1,0 +1,24 @@
+doctype html
+html(lang='de')
+    include templates/head
+    body
+        include templates/header
+        main#main
+            // ======= Breadcrumbs =======
+            section.no-section-after.breadcrumbs
+                .container
+                    .d-flex.justify-content-between.align-items-center
+                        h2 Bot-Datenschutzerklärung
+                        ol
+                            li
+                                a(href='/') Home
+                            li Bot-Datenschutzerklärung
+            section.contact.inner-page.no-section-after
+                .container
+                    .section-title
+                        h2 Bot-Datenschutzerklärung
+                        p Angaben gemäß Discord Developer Richtlinien
+                    .row
+
+        // ======= Footer =======
+        include templates/footer

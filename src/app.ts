@@ -17,6 +17,7 @@ import RedirectRoute from "@routes/RedirectRoute";
 import VoteRoute from "@routes/VoteRoute";
 import ImprintRoute from "@routes/ImprintRoute";
 import PrivacyRoute  from "@routes/PrivacyRoute";
+import BotPrivacyRoute from "@routes/BotPrivacyRoute";
 
 /* Load config */
 const config: any = toml.parse(fs.readFileSync("./config.toml", "utf8"));
@@ -40,6 +41,7 @@ app.use("/redirect", RedirectRoute);
 app.use("/vote", VoteRoute);
 app.use("/imprint", ImprintRoute);
 app.use("/privacy", PrivacyRoute);
+app.use("/bot-privacy", BotPrivacyRoute)
 
 /* Start server */
 app.listen(config.PORT, (): void => {
