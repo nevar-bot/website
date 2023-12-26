@@ -3,13 +3,13 @@ import { Request, Response } from "express";
 export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
-            /* Render imprint page */
-            res.render("imprint", {
+            /* Render privacy page */
+            res.render("privacy", {
                 name: "Nevar",
-                title: "Impressum",
+                title: "Datenschutzerklärung",
                 metaData: {
-                    description: "Impressum gemäß § 5 TMG",
-                    keywords: "Nevar, Discord, Bot, Imprint, Impressum"
+                    description: "Datenschutzerklärung gemäß DSGVO",
+                    keywords: "Nevar, Discord, Bot, Privacy, Datenschutz, DSGVO"
                 }
             });
         }catch(error){

@@ -1,0 +1,24 @@
+doctype html
+html(lang='de')
+    include templates/head
+    body
+        include templates/header
+        main#main
+            // ======= Breadcrumbs =======
+            section.no-section-after.breadcrumbs
+                .container
+                    .d-flex.justify-content-between.align-items-center
+                        h2 Datenschutzerklärung
+                        ol
+                            li
+                                a(href='/') Home
+                            li Datenschutzerklärung
+            section.contact.inner-page.no-section-after
+                .container
+                    .section-title
+                        h2 Datenschutzerklärung
+                        p Angaben gemäß Datenschutzgrundverordnung (DSGVO)
+                    .row
+
+        // ======= Footer =======
+        include templates/footer
