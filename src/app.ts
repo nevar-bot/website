@@ -19,6 +19,7 @@ import ImprintRoute from "@routes/ImprintRoute";
 import PrivacyRoute  from "@routes/PrivacyRoute";
 import BotPrivacyRoute from "@routes/BotPrivacyRoute";
 import TermsRoute from "@routes/TermsRoute";
+import NotfoundRoute from "@routes/NotfoundRoute";
 
 /* Load config */
 const config: any = toml.parse(fs.readFileSync("./config.toml", "utf8"));
@@ -44,6 +45,7 @@ app.use("/imprint", ImprintRoute);
 app.use("/privacy", PrivacyRoute);
 app.use("/bot-privacy", BotPrivacyRoute);
 app.use("/terms", TermsRoute);
+app.use("*", NotfoundRoute);
 
 /* Start server */
 app.listen(config.PORT, (): void => {
