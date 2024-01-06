@@ -49,14 +49,15 @@ html(lang='de')
                                     input#subject.bg-secondary.text-white.rounded.form-control(type='text', name='subject', placeholder='Thema*', required='')
                                 .form-group.mt-3
                                     textarea.bg-secondary.text-white.rounded.form-control(name='message', rows='5', placeholder='Nachricht*', required='')
+                                .form-group.mt-3
+                                    input.bg-secondary.text-white.rounded.form-control.customer-nr(name='customer_nr', autocomplete="off")
                                 .my-3
                                     .error-message
                                     .sent-message
-                                    .loading-message Bitte warten...
+                                    .loading-message
                                 .text-center
                                     button(type='submit') Anfrage senden
-                                .form-group.mt-3
-                                    textarea.form-control(name='captcha', rows='1', style='display: none;')
+
         // ======= Footer =======
         include templates/footer
 
@@ -66,6 +67,7 @@ html(lang='de')
                 const formData = $(this).serialize();
                 $('.error-message').hide();
                 $('.sent-message').hide();
+                $('.loading-message').text('Bitte warten...');
                 $('.loading-message').show();
                 $.ajax({
                    type: 'POST',
@@ -75,11 +77,15 @@ html(lang='de')
                        $('.loading-message').hide();
                        $('.sent-message').text(response.message).show();
                        $('.error-message').hide();
+                       $('form.contact-form input').val('');
+                       $('form.contact-form textarea').val('');
                    },
                    error: function(error){
                        $('.loading-message').hide();
                        $('.error-message').text(error.responseJSON.message).show();
                        $('.sent-message').hide();
+                       $('form.contact-form input').val('');
+                       $('form.contact-form textarea').val('');
                    }
                 });
             })

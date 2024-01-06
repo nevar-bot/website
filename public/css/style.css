@@ -826,6 +826,8 @@ section:not(.no-section-after):after {
   background: #1d2228;
   padding: 20px;
   border-radius: 5px;
+  z-index: 2;
+  position: relative;
 }
 
 .contact .contact-form .form-group {
@@ -889,6 +891,10 @@ section:not(.no-section-after):after {
 
 .contact .contact-form button[type=submit]:hover {
   background: #fb8122;
+}
+
+.contact .contact-form .customer-nr {
+  display:none;
 }
 
 @keyframes animate-loading {

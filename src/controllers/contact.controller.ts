@@ -31,7 +31,7 @@ export default {
                 throw new Error("Bitte fülle alle Felder, welche mit einem * markiert sind, aus.");
             }
 
-            if (requestData.captcha !== "") {
+            if (requestData.customer_nr !== "") {
                 throw new Error("Du wurdest als Bot erkannt.");
             }
 
