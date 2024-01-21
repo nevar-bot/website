@@ -1187,11 +1187,157 @@ section:not(.no-section-after):after {
   color: #e1e2e2;
 }
 
-
 .privacy p {
   color: white;
 }
 
 .privacy li {
   color: white;
+}
+
+/*--------------------------------------------------------------
+# Leaderboard page
+--------------------------------------------------------------*/
+
+.leaderboard-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.guild-icon {
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+}
+
+.leaderboard-item {
+  background-color: #1d2228;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.rank-container {
+  width: 5%;
+}
+
+.rank-container .rank-text {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: rgb(153, 170, 181);
+}
+
+.rank-container .rank-number {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.rank-container .rank-1 {
+  color: rgb(218, 165, 32);
+}
+
+.rank-container .rank-2 {
+  color: rgb(216, 216, 216);
+}
+
+.rank-container .rank-3 {
+  color: rgb(205, 127, 50);
+}
+
+.avatar-container {
+  width: 5%;
+}
+
+.avatar-container .avatar {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username-container {
+  width: 70%;
+}
+
+.username-container div {
+  color: white;
+  font-weight: 510;
+  font-family: "Montserrat", sans-serif;
+}
+
+.level-container {
+  width: 10%;
+}
+
+.level-container .level-text {
+  color: rgb(153, 170, 181);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 530;
+  font-family: "Montserrat", sans-serif;
+}
+
+.level-container .level-number {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+.xp-container {
+  width: 10%;
+}
+
+.xp-container .xp-text {
+  color: rgb(153, 170, 181);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 530;
+  font-family: "Montserrat", sans-serif;
+}
+
+.xp-container .xp-number {
+  text-align: center;
+  color: rgb(246, 120, 82);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .leaderboard-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rank-container,
+  .avatar-container,
+  .username-container,
+  .level-container,
+  .xp-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .guild-icon {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+  }
+
+  .avatar-container .avatar {
+    height: 35%;
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+
+  }
+
+  .username-container div {
+    text-align: center;
+  }
 }

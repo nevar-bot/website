@@ -1,0 +1,47 @@
+doctype html
+html(lang='de')
+    include templates/head
+    body
+        include templates/cookieBanner
+        // ======= Header =======
+        include templates/header
+        main#main
+            // ======= Breadcrumbs =======
+            section.no-section-after.breadcrumbs
+                .container
+                    .d-flex.justify-content-between.align-items-center
+                        h2 Leaderboard
+                        ol
+                            li
+                                a(href='/') Home
+                            li Leaderboard
+            section.leaderboard.inner-page.no-section-after
+                .container
+                    .section-title
+                        img.guild-icon(src=levelData.guild.icon, alt='Leaderboard')
+                        h2.mt-2 #{levelData.guild.name}
+                    .row
+                        .leaderboard-container.col-md-12
+                            each userLevelData in levelData.leaderboard
+                                .leaderboard-item
+                                    div.rank-container
+                                        div.rank-text(class="rank-" + userLevelData.position) Rang
+                                        div.rank-number #{userLevelData.position}
+                                    div.avatar-container
+                                        img.avatar(src=userLevelData.user.avatar, alt=userLevelData.user.username)
+                                    div.username-container
+                                        div #{userLevelData.user.displayName}
+                                    div.level-container
+                                        div.level-text Level
+                                        div.level-number #{userLevelData.level}
+                                    div.xp-container
+                                        div.xp-text XP
+                                        div.xp-number #{userLevelData.cleanXp}
+
+
+
+
+
+
+        // ======= Footer =======
+        include templates/footer
