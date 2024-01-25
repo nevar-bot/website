@@ -865,14 +865,24 @@ section:not(.no-section-after):after {
   font-weight: 600;
 }
 
-.contact .contact-form input,
+.contact .contact-form input[type='text'],
+.contact .contact-form input[type='email'],
 .contact .contact-form textarea {
-  border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .contact-form input {
+.contact .contact-form label {
+  color: white;
+  font-weight: 600;
+}
+
+.contact .contact-form input[type='checkbox'] {
+  box-shadow: none;
+}
+
+.contact .contact-form input[type='text'],
+.contact .contact-form input[type='email'] {
   height: 44px;
 }
 

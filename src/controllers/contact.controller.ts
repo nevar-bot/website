@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import nodemailer from "nodemailer";
 import fs from "fs";
 import * as toml from "toml";
+import axios from "axios";
+const config = toml.parse(fs.readFileSync("./config.toml", "utf8"));
 
 export default {
     async get(req: Request, res: Response): Promise<void> {
@@ -12,7 +14,8 @@ export default {
             metaData: {
                 description: "Kontaktiere uns über das Kontaktformular",
                 keywords: "Nevar, Discord, Bot, Contact, Kontakt"
-            }
+            },
+            friendly_captcha_sitekey: config.FRIENDLY_CAPTCHA_SITEKEY
         });
     },
 
@@ -31,9 +34,14 @@ export default {
                 throw new Error("Bitte fülle alle Felder, welche mit einem * markiert sind, aus.");
             }
 
-            if (requestData.customer_nr !== "") {
-                throw new Error("Du wurdest als Bot erkannt.");
-            }
+            /* Validate captcha */
+            const captchaServerResponse: any = (await axios.post("https://api.friendlycaptcha.com/api/v1/siteverify", {
+                solution: requestData["frc-captcha-solution"],
+                sitekey: config.FRIENDLY_CAPTCHA_SITEKEY,
+                secret: config.FRIENDLY_CAPTCHA_SECRET
+            })).data;
+            if(captchaServerResponse?.success !== true) throw new Error("Du wurdest als Bot erkannt.");
+
 
             /* Setup mail transporter */
             const transporter: nodemailer.transporter = nodemailer.createTransport({
