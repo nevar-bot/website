@@ -4,12 +4,16 @@ import axios from "axios";
 export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
-            const apiResponse: any = await axios.get("http://localhost:8075/levels/leaderboard/" + req.params.guildId + "/all", {
-                validateStatus: () => true
-            });
+            const apiLeaderboard: any = (await axios.post("https://api.nevar.eu/levels/leaderboard",
+                { guild_id: req.params.guildId },
+                { validateStatus: (status: number): boolean => true }
+            )).data;
 
-            if(apiResponse.status !== 200) return res.redirect("/");
-            /* Render terms page */
+            console.log(apiLeaderboard);
+
+            if(apiLeaderboard.status !== 200) return res.redirect("/");
+
+            /* Render leaderboard page */
             res.render("leaderboard", {
                 name: "Nevar",
                 title: "Leaderboard",
@@ -17,7 +21,7 @@ export default {
                     description: "Leaderboard des Nevar-Levelsystems",
                     keywords: "Nevar, Discord, Bot, Leaderboard, Levelsystem"
                 },
-                levelData: apiResponse.data.res
+                levelData: apiLeaderboard.leaderboard
             });
         }catch(error){
             /* Render 503 error page */
