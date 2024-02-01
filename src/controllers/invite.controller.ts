@@ -5,7 +5,7 @@ export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
             /* Get invite url from api */
-            const { invite } = (await axios.get("https://api.nevar.eu/client/stats")).data.bot;
+            const { invite } = (await axios.get("https://api.nevar.eu/general/stats")).data.bot;
 
             /* Redirect to invite url */
             res.status(301).redirect(invite);
