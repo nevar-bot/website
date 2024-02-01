@@ -9,8 +9,6 @@ export default {
                 { validateStatus: (status: number): boolean => true }
             )).data;
 
-            console.log(apiLeaderboard);
-
             if(apiLeaderboard.status !== 200) return res.redirect("/");
 
             /* Render leaderboard page */

@@ -5,7 +5,7 @@ export default {
     async get(req: Request, res: Response): Promise<void> {
         try {
             /* Get commands from api */
-            const { command_list } = (await axios.get("https://api.nevar.eu/interactions/commands")).data.res;
+            const { commands } = (await axios.get("https://api.nevar.eu/interactions/commands")).data;
 
             /* Render commands page */
             res.render("commands", {
@@ -15,7 +15,7 @@ export default {
                     description: "Alle Befehle des Nevar Discord-Bots",
                     keywords: "Nevar, Discord, Bot, Commands, Befehle"
                 },
-                commands: command_list
+                commands: commands
             });
         }catch(error){
             /* Render 503 error page */
