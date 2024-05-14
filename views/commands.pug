@@ -43,8 +43,6 @@ html(lang='de')
                                         .card-body.body
                                             h4 Beschreibung
                                             p #{command.localized_descriptions.de || command.description}
-                                            h4 Cooldown
-                                            p #{command.cooldown / 1000} #{(command.cooldown / 1000) > 1 ? "Sekunden" : "Sekunde"}
         // ======= Footer =======
         include templates/footer
         script(src='/js/commands.js')
